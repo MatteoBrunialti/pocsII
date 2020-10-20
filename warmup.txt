@@ -1,0 +1,112 @@
+Solve Me First
+def solveMeFirst(a,b):
+	return a + b
+
+
+num1 = int(input())
+num2 = int(input())
+res = solveMeFirst(num1,num2)
+print(res)
+
+
+
+Simple Array Sum
+def simpleArraySum(ar):
+    return sum(ar)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = simpleArraySum(ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+
+
+Compare the Triplets
+import math
+import os
+import random
+import re
+import sys
+def compareTriplets(a, b):
+    count_a = 0
+    count_b = 0
+    for i in range(len(a)):
+        if a[i] > b[i]:
+            count_a += 1
+        elif a[i] < b[i]: 
+            count_b += 1
+    return count_a, count_b
+
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    a = list(map(int, input().rstrip().split()))
+
+    b = list(map(int, input().rstrip().split()))
+
+    result = compareTriplets(a, b)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+    print(result)
+
+
+
+A Very Big Sum
+import math
+import os
+import random
+import re
+import sys
+def aVeryBigSum(ar):
+    return sum(ar)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = aVeryBigSum(ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+
+
+Diagonal Difference
+def diagonalDifference(arr):
+    sum_first_diagonal = sum(arr[i][i] for i in range(n))
+    sum_second_diagonal = sum(arr[i][~i] for i in range(n))
+    return abs(sum_first_diagonal - sum_second_diagonal)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    result = diagonalDifference(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+    print(result)
