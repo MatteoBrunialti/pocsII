@@ -1,0 +1,10 @@
+# MED
+file = open('rosalind_med.txt')
+lines = file.readlines()
+n = int(lines[0])
+k = int(lines[2])
+l1 = list(map(int, lines[1].split()))
+l1.sort()
+print(l1[k])
+
+# RESULT: 58111

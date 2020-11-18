@@ -1,0 +1,44 @@
+# 2SUM
+file = open('rosalind_2sum.txt')
+lines = file.readlines()
+n = list(map(int, lines[0].split()))
+def test(file):
+
+    for i in range(1, n[0]+1):
+        r = [0]
+        array = list(map(int, lines[i].split()))
+
+        for j in range(n[1]):
+            for k in range(j+1, n[1]):
+                if (array[j] == -array[k]) and (k-j) > r[-1]:
+                    r = [0]
+                    r.append(j+1)
+                    r.append(k+1)
+                    r.append(j-k)
+        r.pop()
+        if len(r) != 0:
+            r.pop(0)
+        if len(r) == 0:
+            print(-1)
+        else:
+            print(*r)
+
+    return "end"
+
+print(test(lines))
+
+
+RESULT: 5558 6919
+4930 6353
+4438 6363
+-1
+6240 7981
+8518 8640
+-1
+5796 8427
+8555 8714
+8607 8739
+1941 5923
+1380 8406
+-1
+4543 7501

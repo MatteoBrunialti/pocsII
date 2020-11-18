@@ -1,0 +1,11 @@
+# FIBO
+def for_fibonacci(n): # here fibonacci with for loop
+    a, b, c = 0, 1, 1
+    for i in range(n):
+        c = b + a
+        a = b
+        b = c
+    return a
+print(for_fibonacci(20))
+
+# RESULT: 6765
