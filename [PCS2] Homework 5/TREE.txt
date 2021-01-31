@@ -1,0 +1,9 @@
+lst = []
+with open('rosalind_tree.txt', 'r') as f:
+    for line in f:
+        split_lst = [int(x) for x in line.split()]
+        lst.append(split_lst)
+
+n = lst[0][0]
+edges = lst[1:]
+print(n - len(edges) - 1)
