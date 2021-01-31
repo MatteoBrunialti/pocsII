@@ -1,0 +1,2 @@
+file = open('rosalind_inod.txt', "r")
+print(int(file.read())-2)

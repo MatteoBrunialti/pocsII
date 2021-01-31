@@ -1,0 +1,28 @@
+import Bio.SeqIO
+head_dict = {}
+tail_dict = {}
+k=3
+for fa in Bio.SeqIO.parse('rosalind_grph.txt', 'fasta'):
+    seq = str(fa.seq)
+    head = seq[0:k]
+
+    if head in head_dict:
+        head_dict[head].append(fa.id)
+    else:
+        head_dict[head] = [fa.id]
+    tail = seq[-k:]
+    print("line", head,tail)
+    if tail in tail_dict:
+        tail_dict[tail].append(fa.id)
+    else:
+        tail_dict[tail] = [fa.id]
+
+print(head_dict)
+print(tail_dict)
+
+for i in tail_dict.keys():
+    if i in head_dict:
+        for tail in tail_dict[i]:
+            for head in head_dict[i]:
+                if head != tail:
+                    print(tail, head, flush=True)
